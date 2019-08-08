@@ -9,11 +9,11 @@ let usuarioSchema = new Schema({
     },
     email: {
         type: String,
-        required: true
+        required: [true, 'El correo es necesario']
     },
     password: {
         type: String,
-        required: true
+        required: [true, 'El password es obligatorio']
     },
     img: {
         type: String,
@@ -25,13 +25,12 @@ let usuarioSchema = new Schema({
     },
     estado: {
         type: Boolean,
-        default: true 
+        default: true
     },
     google: {
         type: Boolean,
-        default: true
+        default: false
     }
 });
 
 module.exports = mongoose.model('Usuario', usuarioSchema);
-
